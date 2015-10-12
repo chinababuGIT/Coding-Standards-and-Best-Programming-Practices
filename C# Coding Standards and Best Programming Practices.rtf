@@ -1,0 +1,672 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Arial;}{\f1\fswiss\fprq2\fcharset0 Calibri;}{\f2\froman\fprq2\fcharset0 Times New Roman;}{\f3\froman\fprq2\fcharset2 Symbol;}{\f4\fmodern\fprq1\fcharset0 Courier New;}{\f5\froman\fcharset0 inherit;}{\f6\fnil\fcharset0 Calibri;}}
+{\colortbl ;\red0\green51\blue204;\red0\green0\blue255;\red209\green88\blue13;\red34\green34\blue34;\red0\green0\blue0;\red255\green0\blue0;\red0\green51\blue0;\red0\green128\blue0;\red0\green255\blue255;\red255\green255\blue204;}
+{\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\fi-360\sa45\sl300\slmult0\qj\cf1\b\f0\fs36 C# Coding Standards and Best Programming Practices\fs24{\field{\*\fldinst{HYPERLINK "http://www.blogger.com/post-edit.do" }}{\fldrslt{\cf3\ul\f1\line\pard\fi-360 1.\b0\f2\fs14\~\b\f1\fs24 Introduction}}}\cf1\ulnone\f0\fs24\par
+\pard\sl300\slmult0\qj\cf4\b0\f1\line Anybody can write code. With a few months of programming experience, you can write 'working applications'. Making it work is easy, but doing it the right way requires more work, than just making it work.\~\line\line Believe it, majority of the programmers write 'working code', but not \lquote good code'. Writing 'good code' is an art and you must learn and practice it.\f2\par
+\par
+\f1 Everyone may have different definitions for the term \lquote good code\rquote . In my definition, the following are the characteristics of good code.\f2\par
+\par
+\pard\fi-360\sl300\slmult0\qj\f3\'b7\f2\fs14\~\~\~\~\~\~\~\~\~\f1\fs24 Reliable\f2\par
+\f3\'b7\f2\fs14\~\~\~\~\~\~\~\~\~\f1\fs24 Maintainable\f2\par
+\f3\'b7\f2\fs14\~\~\~\~\~\~\~\~\~\f1\fs24 Efficient\f2\par
+\pard\sl300\slmult0\qj\line\par
+\f1 Most of the developers are inclined towards writing code for higher performance, compromising reliability and maintainability. But considering the long term ROI (Return on Investment), efficiency and performance comes below reliability and maintainability. If your code is not reliable and maintainable, you (and your company) will be spending lot of time to identify issues, trying to understand code etc throughout the life of your application.\f2\par
+\par
+\pard\fi-360\cf1\b\f0{\field{\*\fldinst{HYPERLINK "http://www.blogger.com/post-edit.do" }}{\fldrslt{\cf3\ul\f1 2.Purpose of coding standards and best practices}}}\cf1\ulnone\f0\fs24\par
+\pard\sl300\slmult0\qj\cf4\b0\f2\par
+\cf5\f1 To develop reliable and maintainable applications, you must follow coding standards and best practices.\cf4\f2\par
+\par
+\cf5\f1 The naming conventions, coding standards and best practices described in this document are compiled from our own experience and by referring to various Microsoft and non Microsoft guidelines.\cf4\f2\par
+\par
+\cf5\f1 There are several standards exists in the programming industry. None of them are wrong or bad and you may follow any of them. What is more important is, selecting one standard approach and ensuring that everyone is following it.\cf4\f2\par
+\par
+\pard\fi-360\cf1\b\f0{\field{\*\fldinst{HYPERLINK "http://www.blogger.com/post-edit.do" }}{\fldrslt{\cf3\ul\f1 3.How to follow the standards across the team}}}\cf1\ulnone\f0\fs24\par
+\pard\sl300\slmult0\qj\cf4\b0\f2\par
+\f1 If you have a team of different skills and tastes, you are going to have a tough time convincing everyone to follow the same standards. The best approach is to have a team meeting and developing your own standards document. You may use this document as a template to prepare your own document.\f2\par
+\par
+\f1 Distribute a copy of this document (or your own coding standard document) well ahead of the coding standards meeting. All members should come to the meeting prepared to discuss pros and cons of the various points in the document. Make sure you have a manager present in the meeting to resolve conflicts.\f2\par
+\par
+\f1 Discuss all points in the document. Everyone may have a different opinion about each point, but at the end of the discussion, all members must agree upon the standard you are going to follow. Prepare a new standards document with appropriate changes based on the suggestions from all of the team members. Print copies of it and post it in all workstations.\f2\par
+\par
+\f1 After you start the development, you must schedule code review meetings to ensure that everyone is following the rules. 3 types of code reviews are recommended:\f2\par
+\par
+\pard\fi-360\li360\ri360\sl300\slmult0\qj\tx720\f1 1.\tab Peer review \endash  another team member review the code to ensure that the code follows the coding standards and meets requirements. This level of review can include some unit testing also. Every file in the project must go through this process.\f2\par
+\pard\fi-360\li360\ri360\sl300\slmult0\qj\f1 2.\tab Architect review \endash  the architect of the team must review the core modules of the project to ensure that they adhere to the design and there is no \ldblquote big\rdblquote  mistakes that can affect the project in the long run.\f2\par
+\f1 3.\tab Group review \endash  randomly select one or more files and conduct a group review once in a week. Distribute a printed copy of the files to all team members 30 minutes before the meeting. Let them read and come up with points for discussion. In the group review meeting, use a projector to display the file content in the screen. Go through every sections of the code and let every member give their suggestions on how could that piece of code can be written in a better way. (Don\rquote t forget to appreciate the developer for the good work and also make sure he does not get offended by the \ldblquote group attack\rdblquote !)\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\cf1\b\f0{\field{\*\fldinst{HYPERLINK "http://www.blogger.com/post-edit.do" }}{\fldrslt{\cf3\ul\f1 4.\b0\f2\fs14\~\b\f1\fs24 Naming Conventions and Standards}}}\cf1\ulnone\f0\fs24\par
+\pard\sl300\slmult0\qj\cf4\b0\f2\par
+\trowd\trgaph10\trleft-154\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\clcbpat10\clbrdrl\brdrw20\brdrs\clbrdrt\brdrw20\brdrs\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx8696\pard\intbl\sa200\sl300\slmult0\cf5\f1 Note :\cf4\f2\par
+\cf5\f1 The terms\~\ul Pascal Casing\ulnone\~and\~\ul Camel Casing\ulnone\~are used throughout this document.\cf4\f2\par
+\cf5\b\f1 Pascal Casing\~\b0 - First character of all words are Upper Case and other characters are lower case.\cf4\f2\par
+\cf5\f1 Example:\~\ul B\ulnone ack\ul C\ulnone olor\cf4\f2\par
+\cf5\b\f1 Camel Casing -\~\b0 First character of all words,\~\ul except the first word\ulnone\~are Upper Case and other characters are lower case.\cf4\f2\par
+\cf5\f1 Example:\~\ul b\ulnone ack\ul C\ulnone olor\cf4\f2\cell\row\pard\sa200\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 1.\f2\fs14\~\~\~\~\~\~\f1\fs24 Use Pascal casing for Class names\f2\par
+\pard\sl300\slmult0\qj\par
+\cf2\f1 public class\~\b HelloWorld\b0\f4\fs18\par
+\f1\fs24\{\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ ...\f4\fs18\par
+\f1\fs24\}\f4\fs18\par
+\cf4\f2\fs24\par
+\pard\fi-360\sl300\slmult0\qj\f1 2.\f2\fs14\~\~\~\~\~\~\f1\fs24 Use Pascal casing for Method names\f2\par
+\pard\sl300\slmult0\qj\par
+\cf2\f1 void\~\b SayHello\b0 (string name)\f4\fs18\par
+\f1\fs24\{\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ ...\f4\fs18\par
+\f1\fs24\}\f4\fs18\par
+\par
+\cf4\f2\fs24\par
+\pard\fi-360\sl300\slmult0\qj\f1 3.\f2\fs14\~\~\~\~\~\~\f1\fs24 Use Camel casing for variables and method parameters\f2\par
+\pard\sl300\slmult0\qj\par
+\cf2\f1 int\~\b totalCount\b0\~= 0;\f4\fs18\par
+\f1\fs24 void SayHello(string name)\f4\fs18\par
+\f1\fs24\{\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ string\~\b fullMessage\b0\~= "Hello " + name;\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ ...\f4\fs18\par
+\f1\fs24\}\f4\fs18\par
+\cf4\f2\fs24\par
+\pard\fi-360\sl300\slmult0\qj\f1 4.\f2\fs14\~\~\~\~\~\~\f1\fs24 Use the prefix \ldblquote I\rdblquote  with Camel Casing for interfaces ( Example:\~\cf2\b IEntity\cf4\b0\~)\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 5.\f2\fs14\~\~\~\~\~\~\f1\fs24 Do not use Hungarian notation to name variables.\f2\par
+\pard\sl300\slmult0\qj\par
+\f1 In earlier days most of the programmers liked it - having the data type as a prefix for the variable name and using m_ as prefix for member variables. Eg:\f2\par
+\par
+\cf6\f1 string m_sName;\f4\fs18\par
+\f1\fs24 int nAge;\f4\fs18\par
+\cf4\f2\fs24\par
+\f1 However, in .NET coding standards, this is not recommended. Usage of data type and m_ to represent member variables should not be used. All variables should use camel casing.\f2\par
+\par
+\trowd\trgaph10\trleft-144\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\clcbpat10\clbrdrl\brdrw20\brdrs\clbrdrt\brdrw20\brdrs\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx8706\pard\intbl\sl300\slmult0\cf7\f1 Some programmers still prefer to use the prefix\~\b m_\b0\~to represent member variables, since there is no other easy way to identify a member variable.\cf4\f2\cell\row\pard\sl300\slmult0\qj\cf6\f4\fs18\par
+\cf4\f2\fs24\par
+\pard\fi-360\sl300\slmult0\qj\f1 6.\f2\fs14\~\~\~\~\~\~\f1\fs24 Use Meaningful, descriptive words to name variables. Do not use abbreviations.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi360\sl300\slmult0\qj\f1 Good:\f2\par
+\par
+\pard\sl300\slmult0\qj\cf8\f1 string address\f4\fs18\par
+\f1\fs24 int salary\f4\fs18\par
+\cf4\f2\fs24\par
+\pard\fi360\sl300\slmult0\qj\f1 Not Good:\f2\par
+\par
+\pard\sl300\slmult0\qj\cf6\f1 string nam\f4\fs18\par
+\f1\fs24 string addr\f4\fs18\par
+\f1\fs24 int sal\f4\fs18\par
+\cf4\f2\fs24\par
+\pard\fi-360\sl300\slmult0\qj\f1 7.\f2\fs14\~\~\~\~\~\~\f1\fs24 Do not use single character variable names like\~\cf2 i, n, s\~\cf4 etc. Use names like\~\cf2 index, temp\cf4\f2\par
+\pard\sl300\slmult0\qj\par
+\f1 One exception in this case would be variables used for iterations in loops:\f2\par
+\par
+\cf2\f1 for ( int i = 0; i < count; i++ )\f4\fs18\par
+\f1\fs24\{\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ ...\f4\fs18\par
+\f1\fs24\}\f4\fs18\par
+\cf4\f2\fs24\par
+\f1 If the variable is used only as a counter for iteration and is not used anywhere else in the loop, many people still like to use a single char variable (i) instead of inventing a different suitable name.\f2\par
+\par
+\pard\fi-360\sl300\slmult0\qj\f1 8.\f2\fs14\~\~\~\~\~\~\f1\fs24 Do not use underscores (_) for local variable names.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 9.\f2\fs14\~\~\~\~\~\~\f1\fs24 All member variables must be prefixed with underscore (_) so that they can be identified from other local variables.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 10.\f2\fs14\~\~\f1\fs24 Do not use variable names that resemble keywords.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 11.\f2\fs14\~\~\f1\fs24 Prefix\~\cf2 boolean\cf4\~variables, properties and methods with \ldblquote\cf2 is\cf4\rdblquote  or similar prefixes.\f2\par
+\pard\sl300\slmult0\qj\par
+\f1 Ex:\~\cf2 private bool _isFinished\cf4\f2\par
+\par
+\pard\fi-360\sl300\slmult0\qj\f1 12.\f2\fs14\~\~\f1\fs24 Namespace names should follow the standard pattern\f2\par
+\pard\sl300\slmult0\qj\par
+\cf2\f1 ...\f4\fs18\par
+\par
+\pard\fi-360\sl300\slmult0\qj\cf4\f1\fs24 13.\f2\fs14\~\~\f1\fs24 Use appropriate prefix for the UI elements so that you can identify them from the rest of the variables.\f2\par
+\pard\sl300\slmult0\qj\par
+\f1 There are 2 different approaches recommended here.\f2\par
+\par
+\pard\fi-360\sl300\slmult0\qj\f1 a.\f2\fs14\~\~\~\~\~\~\f1\fs24 Use a common prefix ( ui_ ) for all UI elements. This will help you group all of the UI elements together and easy to access all of them from the intelligence.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 b.\f2\fs14\~\~\~\~\~\~\f1\fs24 Use appropriate prefix for each of the ui element. A brief list is given below. Since .NET has given several controls, you may have to arrive at a complete list of standard prefixes for each of the controls (including third party controls) you are using.\f2\par
+\pard\sl300\slmult0\qj\par
+\par
+\trowd\trgaph10\trleft921\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\clcbpat10\clbrdrl\brdrw20\brdrs\clbrdrt\brdrw20\brdrs\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx4049\clvertalc\clcbpat10\clbrdrt\brdrw20\brdrs\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx6261\pard\intbl\sl300\slmult0\b\f1 Control\b0\f2\cell\cf5\b\f1 Prefix\cf4\b0\f2\cell\row\trowd\trgaph10\trleft921\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\clcbpat10\clbrdrl\brdrw20\brdrs\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx4049\clvertalc\clcbpat10\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx6261\pard\intbl\sl300\slmult0\f1 Label\f2\cell\cf7\f1 lbl\cf4\f2\cell\row\trowd\trgaph10\trleft921\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\clcbpat10\clbrdrl\brdrw20\brdrs\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx4049\clvertalc\clcbpat10\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx6261\pard\intbl\sl300\slmult0\f1 TextBox\f2\cell\cf7\f1 txt\cf4\f2\cell\row\trowd\trgaph10\trleft921\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\clcbpat10\clbrdrl\brdrw20\brdrs\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx4049\clvertalc\clcbpat10\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx6261\pard\intbl\sl300\slmult0\f1 DataGrid\f2\cell\cf7\f1 dtg\cf4\f2\cell\row\trowd\trgaph10\trleft921\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\clcbpat10\clbrdrl\brdrw20\brdrs\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx4049\clvertalc\clcbpat10\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx6261\pard\intbl\sl300\slmult0\f1 Button\f2\cell\cf7\f1 btn\cf4\f2\cell\row\trowd\trgaph10\trleft921\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\clcbpat10\clbrdrl\brdrw20\brdrs\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx4049\clvertalc\clcbpat10\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx6261\pard\intbl\sl300\slmult0\f1 ImageButton\f2\cell\cf7\f1 imb\cf4\f2\cell\row\trowd\trgaph10\trleft921\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\clcbpat10\clbrdrl\brdrw20\brdrs\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx4049\clvertalc\clcbpat10\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx6261\pard\intbl\sl300\slmult0\f1 Hyperlink\f2\cell\cf7\f1 hlk\cf4\f2\cell\row\trowd\trgaph10\trleft921\trrh345\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\clcbpat10\clbrdrl\brdrw20\brdrs\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx4049\clvertalc\clcbpat10\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx6261\pard\intbl\sl300\slmult0\f1 DropDownList\f2\cell\cf7\f1 ddl\cf4\f2\cell\row\trowd\trgaph10\trleft921\trrh345\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\clcbpat10\clbrdrl\brdrw20\brdrs\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx4049\clvertalc\clcbpat10\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx6261\pard\intbl\sl300\slmult0\f1 ListBox\f2\cell\cf7\f1 lst\cf4\f2\cell\row\trowd\trgaph10\trleft921\trrh345\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\clcbpat10\clbrdrl\brdrw20\brdrs\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx4049\clvertalc\clcbpat10\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx6261\pard\intbl\sl300\slmult0\f1 DataList\f2\cell\cf7\f1 dtl\cf4\f2\cell\row\trowd\trgaph10\trleft921\trrh345\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\clcbpat10\clbrdrl\brdrw20\brdrs\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx4049\clvertalc\clcbpat10\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx6261\pard\intbl\sl300\slmult0\f1 Repeater\f2\cell\cf7\f1 rep\cf4\f2\cell\row\trowd\trgaph10\trleft921\trrh345\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\clcbpat10\clbrdrl\brdrw20\brdrs\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx4049\clvertalc\clcbpat10\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx6261\pard\intbl\sl300\slmult0\f1 Checkbox\f2\cell\cf7\f1 chk\cf4\f2\cell\row\trowd\trgaph10\trleft921\trrh345\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\clcbpat10\clbrdrl\brdrw20\brdrs\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx4049\clvertalc\clcbpat10\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx6261\pard\intbl\sl300\slmult0\f1 CheckBoxList\f2\cell\cf7\f1 cbl\cf4\f2\cell\row\trowd\trgaph10\trleft921\trrh345\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\clcbpat10\clbrdrl\brdrw20\brdrs\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx4049\clvertalc\clcbpat10\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx6261\pard\intbl\sl300\slmult0\f1 RadioButton\f2\cell\cf7\f1 rdo\cf4\f2\cell\row\trowd\trgaph10\trleft921\trrh345\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\clcbpat10\clbrdrl\brdrw20\brdrs\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx4049\clvertalc\clcbpat10\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx6261\pard\intbl\sl300\slmult0\f1 RadioButtonList\f2\cell\cf7\f1 rbl\cf4\f2\cell\row\trowd\trgaph10\trleft921\trrh345\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\clcbpat10\clbrdrl\brdrw20\brdrs\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx4049\clvertalc\clcbpat10\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx6261\pard\intbl\sl300\slmult0\f1 Image\f2\cell\cf7\f1 img\cf4\f2\cell\row\trowd\trgaph10\trleft921\trrh345\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\clcbpat10\clbrdrl\brdrw20\brdrs\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx4049\clvertalc\clcbpat10\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx6261\pard\intbl\sl300\slmult0\f1 Panel\f2\cell\cf7\f1 pnl\cf4\f2\cell\row\trowd\trgaph10\trleft921\trrh345\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\clcbpat10\clbrdrl\brdrw20\brdrs\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx4049\clvertalc\clcbpat10\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx6261\pard\intbl\sl300\slmult0\f1 PlaceHolder\f2\cell\cf7\f1 phd\cf4\f2\cell\row\trowd\trgaph10\trleft921\trrh345\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\clcbpat10\clbrdrl\brdrw20\brdrs\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx4049\clvertalc\clcbpat10\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx6261\pard\intbl\sl300\slmult0\f1 Table\f2\cell\cf7\f1 tbl\cf4\f2\cell\row\trowd\trgaph10\trleft921\trrh345\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\clcbpat10\clbrdrl\brdrw20\brdrs\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx4049\clvertalc\clcbpat10\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx6261\pard\intbl\sl300\slmult0\f1 Validators\f2\cell\cf7\f1 val\cf4\f2\cell\row\pard\sl300\slmult0\qj\par
+\cf2\f4\fs18\par
+\cf4\f2\fs24\par
+\pard\fi-360\sl300\slmult0\qj\f1 14.\f2\fs14\~\~\f1\fs24 File name should match with class name.\f2\par
+\pard\sl300\slmult0\qj\par
+\f1 For example, for the class HelloWorld, the file name should be helloworld.cs (or, helloworld.vb)\f2\par
+\par
+\pard\fi-360\sl300\slmult0\qj\f1 15.\f2\fs14\~\~\f1\fs24 Use Pascal Case for file names.\f2\par
+\pard\sl300\slmult0\qj\par
+\par
+\par
+\pard\fi-360\cf1\b\f0{\field{\*\fldinst{HYPERLINK "http://www.blogger.com/post-edit.do" }}{\fldrslt{\cf3\ul\f1 5.Indentation and Spacing}}}\cf1\ulnone\f0\fs24\par
+\pard\sl300\slmult0\qj\cf4\b0\f2\par
+\pard\fi-360\sl300\slmult0\qj\f1 1.\f2\fs14\~\~\~\~\~\~\f1\fs24 Use TAB for indentation. Do not use SPACES. \~Define the Tab size as 4.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 2.\f2\fs14\~\~\~\~\~\~\f1\fs24 Comments should be in the same level as the code (use the same level of indentation).\f2\par
+\pard\sl300\slmult0\qj\par
+\f1 Good:\f2\par
+\par
+\cf8\f1 // Format a message and display\f4\fs18\par
+\par
+\f1\fs24 string fullMessage = "Hello " + name;\f4\fs18\par
+\f1\fs24 DateTime currentTime = DateTime.Now;\f4\fs18\par
+\f1\fs24 string message = fullMessage + ", the time is : " + currentTime.ToShortTimeString();\f4\fs18\par
+\f1\fs24 MessageBox.Show ( message );\f4\fs18\par
+\cf4\f2\fs24\par
+\f1 Not Good:\f2\par
+\par
+\cf6\f1 // Format a message and display\f4\fs18\par
+\pard\fi720\sl300\slmult0\qj\f1\fs24 string fullMessage = "Hello " + name;\f4\fs18\par
+\f1\fs24 DateTime currentTime = DateTime.Now;\f4\fs18\par
+\pard\sl300\slmult0\qj\f1\fs24 string message = fullMessage + ", the time is : " + currentTime.ToShortTimeString();\f4\fs18\par
+\pard\fi720\sl300\slmult0\qj\f1\fs24 MessageBox.Show ( message );\f4\fs18\par
+\pard\sl300\slmult0\qj\cf4\f2\fs24\par
+\pard\fi-360\sl300\slmult0\qj\f1 3.\f2\fs14\~\~\~\~\~\~\f1\fs24 Curly braces (\~\cf2\f5\{\}\cf4\f1\~) should be in the same level as the code outside the braces.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\f1\~\~\~\~\~\~\~\~\~\~\~\~\cf0\lang9\f6\fs22{\pict\wmetafile8\picw4948\pich3149\picwgoal2805\pichgoal1785 
+0100090000038500000002001c00000000000400000003010800050000000b0200000000050000
+000c02e8029204040000002e0118001c000000fb02a4ff00000000000090010000000004400022
+43616c6962726900000000000000000000000000000000000000000000000000040000002d0100
+00040000002d010000040000002d0100000400000002010100050000000902000000020d000000
+320a5700000001000400000000009104e80220003600050000000902000000021c000000fb0210
+00070000000000bc02000000000102022253797374656d0077d0fc550668412a0019e224778001
+2977687d6b0774412a00040000002d010100040000002d010100030000000000
+}\cf4\lang1033\f2\fs24\par
+\pard\fi-360\sl300\slmult0\qj\f1 4.\f2\fs14\~\~\~\~\~\~\f1\fs24 Use one blank line to separate logical groups of code.\f2\par
+\pard\sl300\slmult0\qj\par
+\f1 Good:\f2\par
+\cf8\f1\~\~\~\~\~\~\~\~\~\~\~ bool SayHello ( string name )\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ \{\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ string fullMessage = "Hello " + name;\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ DateTime currentTime = DateTime.Now;\f4\fs18\par
+\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ string message = fullMessage + ", the time is : " + currentTime.ToShortTimeString();\f4\fs18\par
+\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ MessageBox.Show ( message );\f4\fs18\par
+\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ if ( ... )\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ \{\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ // Do something\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ // ...\f4\fs18\par
+\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ return false;\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ \}\f4\fs18\par
+\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ return true;\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ \}\f4\fs18\par
+\cf4\f2\fs24\par
+\f1 Not Good:\f2\par
+\par
+\cf6\f1\~\~\~\~\~\~\~\~\~\~\~ bool SayHello (string name)\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ \{\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ string fullMessage = "Hello " + name;\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ DateTime currentTime = DateTime.Now;\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ string message = fullMessage + ", the time is : " + currentTime.ToShortTimeString();\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ MessageBox.Show ( message );\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ if ( ... )\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ \{\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ // Do something\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ // ...\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ return false;\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ \}\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ return true;\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ \}\f4\fs18\par
+\cf4\f2\fs24\par
+\pard\fi-360\sl300\slmult0\qj\f1 5.\f2\fs14\~\~\~\~\~\~\f1\fs24 There should be one and only one single blank line between each method inside the class.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 6.\f2\fs14\~\~\~\~\~\~\f1\fs24 The curly braces should be on a separate line and not in the same line as\~\cf2 if, for\cf4\~etc.\f2\par
+\pard\sl300\slmult0\qj\par
+\f1 Good:\f2\par
+\cf8\f1\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ if ( ... )\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ \{\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ // Do something\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ \}\f4\fs18\par
+\cf4\f2\fs24\par
+\f1 Not Good:\f2\par
+\par
+\cf6\f1\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ if ( ... ) \{\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ // Do something\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ \}\f4\fs18\par
+\cf4\f2\fs24\par
+\pard\fi-360\sl300\slmult0\qj\f1 7.\f2\fs14\~\~\~\~\~\~\f1\fs24 Use a single space before and after each operator and brackets.\f2\par
+\pard\sl300\slmult0\qj\par
+\f1 Good:\f2\par
+\cf8\f1\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ if ( showResult == true )\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ \{\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ for ( int i = 0; i < 10; i++ )\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ \{\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ //\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ \}\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ \}\f4\fs18\par
+\cf4\f2\fs24\par
+\f1 Not Good:\f2\par
+\par
+\cf6\f1\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ if(showResult==true)\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ \{\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ for(int\~ \~\~ i= 0;i<10;i++)\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ \{\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ //\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ \}\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ \}\f4\fs18\par
+\par
+\par
+\pard\fi-360\sl300\slmult0\qj\cf4\f1\fs24 8.\f2\fs14\~\~\~\~\~\~\f1\fs24 Use\~\cf2 #region\cf4\~to group related pieces of code together. If you use proper grouping using\~\cf2 #region\cf4 , the page should like this when all definitions are collapsed.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\cf0\lang9\f6\fs22{\pict\wmetafile8\picw8255\pich8890\picwgoal4680\pichgoal5040 
+0100090000038d00000002001c00000000000400000003010800050000000b0200000000050000
+000c023208a007040000002e0118001c000000fb021000070000000000bc020000000001020222
+53797374656d0077d0fc550668412a0019e2247780012977b0826d0774412a00040000002d0100
+00040000002d01000004000000020101001c000000fb02a4ff0000000000009001000000000440
+002243616c6962726900000000000000000000000000000000000000000000000000040000002d
+010100040000002d010100040000002d010100050000000902000000020d000000320a57000000
+01000400000000009e0734082000360005000000090200000002040000002d010000040000002d
+010000030000000000
+}\cf4\lang1033\f2\fs24\par
+\pard\sl300\slmult0\qj\cf6\f4\fs18\par
+\pard\fi-360\sl300\slmult0\qj\cf4\f1\fs24 9.\f2\fs14\~\~\~\~\~\~\f1\fs24 Keep private member variables, properties and methods in the top of the file and public members in the bottom.\~\f2\par
+\pard\sl300\slmult0\qj\cf6\f4\fs18\par
+\pard\fi-360\cf1\b\f0\fs24{\field{\*\fldinst{HYPERLINK "http://www.blogger.com/post-edit.do" }}{\fldrslt{\cf3\ul\f1 6.Good Programming practices}}}\cf1\ulnone\f0\fs24\par
+\pard\sl300\slmult0\qj\cf4\b0\f2\par
+\pard\fi-360\sl300\slmult0\qj\f1 1.\f2\fs14\~\~\~\~\~\~\f1\fs24 Avoid writing very long methods. A method should typically have 1~25 lines of code. If a method has more than 25 lines of code, you must consider re factoring into separate methods.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 2.\f2\fs14\~\~\~\~\~\~\f1\fs24 Method name should tell what it does. Do not use mis-leading names. If the method name is obvious, there is no need of documentation explaining what the method does.\f2\par
+\pard\sl300\slmult0\qj\par
+\f1 Good:\f2\par
+\cf8\f1\~\~\~\~\~\~\~\~\~\~\~ void SavePhoneNumber ( string phoneNumber )\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ \{\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ // Save the phone number.\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ \}\f4\fs18\par
+\cf4\f2\fs24\par
+\f1 Not Good:\f2\par
+\par
+\cf6\f1\~\~\~\~\~\~\~\~\~\~\~ // This method will save the phone number.\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ void SaveDetails ( string phoneNumber )\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ \{\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ // Save the phone number.\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ \}\f4\fs18\par
+\cf4\f2\fs24\par
+\pard\fi-360\sl300\slmult0\qj\f1 3.\f2\fs14\~\~\~\~\~\~\f1\fs24 A method should do only 'one job'. Do not combine more than one job in a single method, even if those jobs are very small.\f2\par
+\pard\sl300\slmult0\qj\par
+\f1 Good:\f2\par
+\cf8\f1\~\~\~\~\~\~\~\~\~\~\~ // Save the address.\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ SaveAddress (\~ address );\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ // Send an email to the supervisor to inform that the address is updated.\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ SendEmail ( address, email );\~\~\~\~\~\~\~\~\~\~\~\~\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ void SaveAddress ( string address )\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ \{\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ // Save the address.\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ // ...\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ \}\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ void SendEmail ( string address, string email )\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ \{\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ // Send an email to inform the supervisor that the address is changed.\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ // ...\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ \}\f4\fs18\par
+\cf4\f2\fs24\par
+\f1 Not Good:\f2\par
+\par
+\cf6\f1\~\~\~\~\~\~\~\~\~\~\~ // Save address and send an email to the supervisor to inform that\f4\fs18\par
+\pard\fi720\sl300\slmult0\qj\f1\fs24 // the address is updated.\f4\fs18\par
+\pard\sl300\slmult0\qj\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ SaveAddress ( address, email );\f4\fs18\par
+\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ void SaveAddress ( string address, string email )\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ \{\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ // Job 1.\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ // Save the address.\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ // ...\f4\fs18\par
+\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ // Job 2.\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ // Send an email to inform the supervisor that the address is changed.\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ // ...\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ \}\f4\fs18\par
+\cf4\f2\fs24\par
+\pard\fi-360\sl300\slmult0\qj\f1 4.\f2\fs14\~\~\~\~\~\~\f1\fs24 Use the c# or VB.NET specific types (aliases), rather than the types defined in System namespace.\f2\par
+\pard\sl300\slmult0\qj\par
+\cf8\f1\~\~\~\~\~\~\~\~\~\~\~ int age;\~\~ (not\~\b I\b0 nt\b 16\b0 )\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ string name;\~ (not\~\b S\b0 tring)\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ object contactInfo; (not\~\b O\b0 bject)\f4\fs18\par
+\cf4\f2\fs24\par
+\f1\~\~\~\~\~\~\~\~\~\~\~\f2\par
+\trowd\trgaph10\trleft-169\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\clcbpat10\clbrdrl\brdrw20\brdrs\clbrdrt\brdrw20\brdrs\clbrdrr\brdrw20\brdrs\clbrdrb\brdrw20\brdrs \cellx8681\pard\intbl\sl300\slmult0\f1 Some developers prefer to use types in Common Type System than language specific aliases.\f2\cell\row\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 5.\f2\fs14\~\~\~\~\~\~\f1\fs24 Always watch for unexpected values. For example, if you are using a parameter with 2 possible values, never assume that if one is not matching then the only possibility is the other value.\f2\par
+\pard\sl300\slmult0\qj\par
+\f1 Good:\f2\par
+\par
+\cf8\f1 If ( memberType == eMemberTypes.Registered )\f4\fs18\par
+\f1\fs24\{\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ // Registered user\'85 do something\'85\f4\fs18\par
+\f1\fs24\}\f4\fs18\par
+\f1\fs24 else if ( memberType == eMemberTypes.Guest )\f4\fs18\par
+\f1\fs24\{\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ // Guest user... do something\'85\f4\fs18\par
+\f1\fs24\}\f4\fs18\par
+\b\f1\fs24 else\b0\f4\fs18\par
+\b\f1\fs24\{\b0\f4\fs18\par
+\b\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ \~\~\~\~\~\~\~\~\~\~\~ // Un expected user type. Throw an exception\b0\f4\fs18\par
+\b\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ \~\~\~\~\~\~\~\~\~\~\~ throw new Exception (\ldblquote Un expected value \ldblquote  + memberType.ToString() + \ldblquote\rquote .\rdblquote )\b0\f4\fs18\par
+\par
+\b\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ \~\~\~\~\~\~\~\~\~\~\~ // If we introduce a new user type in future, we can easily find\b0\f4\fs18\par
+\pard\fi720\sl300\slmult0\qj\b\f1\fs24 // the problem here.\b0\f4\fs18\par
+\pard\sl300\slmult0\qj\b\f1\fs24\}\b0\f4\fs18\par
+\cf4\f2\fs24\par
+\f1 Not Good:\f2\par
+\par
+\cf6\f1 If ( memberType == eMemberTypes.Registered )\f4\fs18\par
+\f1\fs24\{\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ \~\~\~\~\~\~\~\~\~\~\~ // Registered user\'85 do something\'85\f4\fs18\par
+\f1\fs24\}\f4\fs18\par
+\f1\fs24 else\f4\fs18\par
+\f1\fs24\{\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ \~\~\~\~\~\~\~\~\~\~\~ // Guest user... do something\'85\f4\fs18\par
+\par
+\f1\fs24 // If we introduce another user type in future, this code will\f4\fs18\par
+\f1\fs24 // fail and will not be noticed.\f4\fs18\par
+\f1\fs24\}\f4\fs18\par
+\cf4\f2\fs24\par
+\pard\fi-360\sl300\slmult0\qj\f1 6.\f2\fs14\~\~\~\~\~\~\f1\fs24 Do not hardcode numbers. Use constants instead. Declare constant in the top of the file and use it in your code.\f2\par
+\pard\sl300\slmult0\qj\par
+\f1 However, using constants are also not recommended. You should use the constants in the config file or database so that you can change it later. Declare them as constants only if you are sure this value will never need to be changed.\f2\par
+\par
+\pard\fi-360\sl300\slmult0\qj\f1 7.\f2\fs14\~\~\~\~\~\~\f1\fs24 Do not hardcode strings. Use resource files.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 8.\f2\fs14\~\~\~\~\~\~\f1\fs24 Convert strings to lowercase or upper case before comparing. This will ensure the string will match even if the string being compared has a different case.\f2\par
+\pard\sl300\slmult0\qj\par
+\cf8\f1 if ( name.ToLower() == \ldblquote john\rdblquote  )\f4\fs18\par
+\f1\fs24\{\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ \~\~\~ //\'85\f4\fs18\par
+\f1\fs24\}\f4\fs18\par
+\cf4\f2\fs24\par
+\pard\fi-360\sl300\slmult0\qj\f1 9.\f2\fs14\~\~\~\~\~\~\f1\fs24 Use String.Empty instead of \ldblquote\rdblquote\f2\par
+\pard\sl300\slmult0\qj\par
+\f1 Good:\f2\par
+\par
+\cf8\f1 If ( name == String.Empty )\f4\fs18\par
+\f1\fs24\{\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ // do something\f4\fs18\par
+\f1\fs24\}\f4\fs18\par
+\cf4\f2\fs24\par
+\f1 Not Good:\f2\par
+\par
+\cf6\f1 If ( name == \ldblquote\rdblquote  )\f4\fs18\par
+\f1\fs24\{\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ // do something\f4\fs18\par
+\f1\fs24\}\f4\fs18\par
+\cf4\f2\fs24\par
+\par
+\pard\fi-360\sl300\slmult0\qj\f1 10.\f2\fs14\~\~\f1\fs24 Avoid using member variables. Declare local variables wherever necessary and pass it to other methods instead of sharing a member variable between methods. If you share a member variable between methods, it will be difficult to track which method changed the value and when.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 11.\f2\fs14\~\~\f1\fs24 Use\~\cf2 enum\cf4\~wherever required. Do not use numbers or strings to indicate discrete values.\f2\par
+\pard\sl300\slmult0\qj\par
+\f1 Good:\f2\par
+\cf8\f1\~\~\~\~\~\~\~\~\~\~\~ enum MailType\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ \{\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ Html,\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ PlainText,\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ Attachment\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ \}\f4\fs18\par
+\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ void SendMail (string message, MailType mailType)\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ \{\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ switch ( mailType )\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ \{\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ case MailType.Html:\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ // Do something\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ break;\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ case MailType.PlainText:\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ // Do something\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ break;\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ case MailType.Attachment:\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ // Do something\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ break;\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ default:\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ // Do something\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ break;\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ \}\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ \}\f4\fs18\par
+\cf4\f2\fs24\par
+\par
+\f1 Not Good:\f2\par
+\par
+\cf6\f1\~\~\~\~\~\~\~\~\~\~\~ void SendMail (string message, string mailType)\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ \{\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ switch ( mailType )\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ \{\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ case "Html":\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ // Do something\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ break;\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ case "PlainText":\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ // Do something\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ break;\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ case "Attachment":\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ // Do something\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ break;\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ default:\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ // Do something\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ break;\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ \}\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ \}\f4\fs18\par
+\pard\fi-360\sl300\slmult0\qj\cf4\f1\fs24 12.\f2\fs14\~\~\f1\fs24 Do not make the member variables public or protected. Keep them private and expose public/protected Properties.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 13.\f2\fs14\~\~\f1\fs24 The event handler should not contain the code to perform the required action. Rather call another method from the event handler.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 14.\f2\fs14\~\~\f1\fs24 Do not programmatically click a button to execute the same action you have written in the button click event. Rather, call the same method which is called by the button click event handler.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 15.\f2\fs14\~\~\f1\fs24 Never hardcode a path or drive name in code. Get the application path programmatically and use relative path.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 16.\f2\fs14\~\~\f1\fs24 Never assume that your code will run from drive "C:". You may never know, some users may run it from network or from a "Z:".\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 17.\f2\fs14\~\~\f1\fs24 In the application start up, do some kind of "self check" and ensure all required files and dependancies are available in the expected locations. Check for database connection in start up, if required. Give a friendly message to the user in case of any problems.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 18.\f2\fs14\~\~\f1\fs24 If the required configuration file is not found, application should be able to create one with default values.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 19.\f2\fs14\~\~\f1\fs24 If a wrong value found in the configuration file, application should throw an error or give a message and also should tell the user what are the correct values.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 20.\f2\fs14\~\~\f1\fs24 Error messages should help the user to solve the problem. Never give error messages like "Error in Application", "There is an error" etc. Instead give specific messages like "Failed to update database. Please make sure the login id and password are correct."\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 21.\f2\fs14\~\~\f1\fs24 When displaying error messages, in addition to telling what is wrong, the message should also tell what should the user do to solve the problem. Instead of message like "Failed to update database.", suggest what should the user do: "Failed to update database. Please make sure the login id and password are correct."\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 22.\f2\fs14\~\~\f1\fs24 Show short and friendly message to the user. But log the actual error with all possible information. This will help a lot in diagnosing problems.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 23.\f2\fs14\~\~\f1\fs24 Do not have more than one class in a single file.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 24.\f2\fs14\~\~\f1\fs24 Have your own templates for each of the file types in Visual Studio. You can include your company name, copy right information etc in the template. You can view or edit the Visual Studio file templates in the folder\~\cf2 C:\\Program Files\\Microsoft Visual Studio 8\\Common7\\IDE\\ItemTemplatesCache\\CSharp\\1033\cf4 . (This folder has the templates for C#, but you can easily find the corresponding folders or any other language)\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 25.\f2\fs14\~\~\f1\fs24 Avoid having very large files. If a single file has more than 1000 lines of code, it is a good candidate for refactoring. Split them logically into two or more classes.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 26.\f2\fs14\~\~\f1\fs24 Avoid public methods and properties, unless they really need to be accessed from outside the class. Use \ldblquote internal\rdblquote  if they are accessed only within the same assembly.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 27.\f2\fs14\~\~\f1\fs24 Avoid passing too many parameters to a method. If you have more than 4~5 parameters, it is a good candidate to define a class or structure.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 28.\f2\fs14\~\~\f1\fs24 If you have a method returning a collection, return an empty collection instead of null, if you have no data to return. For example, if you have a method returning an ArrayList, always return a valid ArrayList. If you have no items to return, then return a valid ArrayList with 0 items. This will make it easy for the calling application to just check for the \ldblquote count\rdblquote  rather than doing an additional check for \ldblquote null\rdblquote .\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 29.\f2\fs14\~\~\f1\fs24 Use the AssemblyInfo file to fill information like version number, description, company name, copyright notice etc.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 30.\f2\fs14\~\~\f1\fs24 Logically organize all your files within appropriate folders. Use 2 level folder hierarchies. You can have up to 10 folders in the root folder and each folder can have up to 5 sub folders. If you have too many folders than cannot be accommodated with the above mentioned 2 level hierarchy, you may need re factoring into multiple assemblies.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 16.\f2\fs14\~\~\f1\fs24 Make sure you have a good logging class which can be configured to log errors, warning or traces. If you configure to log errors, it should only log errors. But if you configure to log traces, it should record all (errors, warnings and trace). Your log class should be written such a way that in future you can change it easily to log to Windows Event Log, SQL Server, or Email to administrator or to a File etc without any change in any other part of the application. Use the log class extensively throughout the code to record errors, warning and even trace messages that can help you trouble shoot a problem.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 17.\f2\fs14\~\~\f1\fs24 If you are opening database connections, sockets, file stream etc, always close them in the\~\cf2 finally\cf4\~block. This will ensure that even if an exception occurs after opening the connection, it will be safely closed in the\~\cf2 finally\cf4\~block.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 18.\f2\fs14\~\~\f1\fs24 Declare variables as close as possible to where it is first used. Use one variable declaration per line.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 19.\f2\fs14\~\~\f1\fs24 Use StringBuilder class instead of String when you have to manipulate string objects in a loop. The String object works in weird way in .NET. Each time you append a string, it is actually discarding the old string object and recreating a new object, which is a relatively expensive operations.\f2\par
+\pard\sl300\slmult0\qj\par
+\f1 Consider the following example:\f2\par
+\par
+\cf6\f1 public string ComposeMessage (string[] lines)\f4\fs18\par
+\f1\fs24\{\f4\fs18\par
+\f1\fs24\~\~\~string message = String.Empty;\f4\fs18\par
+\par
+\f1\fs24\~\~\~for (int i = 0; i < lines.Length; i++)\f4\fs18\par
+\f1\fs24\~\~\~\{\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~message += lines [i];\f4\fs18\par
+\f1\fs24\~\~\~\}\f4\fs18\par
+\par
+\f1\fs24\~ \~return message;\f4\fs18\par
+\f1\fs24\}\f4\fs18\par
+\cf4\fs16\par
+\f1\fs24 In the above example, it may look like we are just appending to the string object \lquote message\rquote . But what is happening in reality is, the string object is discarded in each iteration and recreated and appending the line to it.\f2\par
+\par
+\f1 If your loop has several iterations, then it is a good idea to use StringBuilder class instead of String object.\f2\par
+\par
+\f1 See the example where the String object is replaced with StringBuilder.\f2\par
+\par
+\cf8\f1 public string ComposeMessage (string[] lines)\f4\fs18\par
+\f1\fs24\{\f4\fs18\par
+\f1\fs24\~\~\~\~StringBuilder message = new StringBuilder();\f4\fs18\par
+\par
+\f1\fs24\~\~\~\~for (int i = 0; i < lines.Length; i++)\f4\fs18\par
+\f1\fs24\~\~\~\~\{\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~message.Append( lines[i] );\f4\fs18\par
+\f1\fs24\~\~\~\~\}\f4\fs18\par
+\par
+\f1\fs24\~\~\~\~return message.ToString();\f4\fs18\par
+\f1\fs24\}\f4\fs18\par
+\cf4\f2\fs24\par
+\par
+\pard\fi-360\cf1\b\f0{\field{\*\fldinst{HYPERLINK "http://www.blogger.com/post-edit.do" }}{\fldrslt{\cf3\ul\f1 7.\b0\f2\fs14\~\~\~\~\~\~\b\f1\fs24 Architecture}}}\cf1\ulnone\f0\fs24\par
+\pard\sl300\slmult0\qj\cf4\b0\f2\par
+\pard\fi-360\sl300\slmult0\qj\f1 1.\f2\fs14\~\~\~\~\~\~\f1\fs24 Always use multi layer (N-Tier) architecture.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 2.\f2\fs14\~\~\~\~\~\~\f1\fs24 Never access database from the UI pages. Always have a data layer class which performs all the database related tasks. This will help you support or migrate to another database back end easily.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 3.\f2\fs14\~\~\~\~\~\~\f1\fs24 Use try-catch in your data layer to catch all database exceptions. This exception handler should record all exceptions from the database. The details recorded should include the name of the command being executed, stored proc name, parameters, connection string used etc. After recording the exception, it could be re thrown so that another layer in the application can catch it and take appropriate action.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 4.\f2\fs14\~\~\~\~\~\~\f1\fs24 Separate your application into multiple assemblies. Group all independent utility classes into a separate class library. All your database related files can be in another class library.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\cf1\b\f0{\field{\*\fldinst{HYPERLINK "http://www.blogger.com/post-edit.do" }}{\fldrslt{\cf3\ul\f1 8.\b0\f2\fs14\~\b\f1\fs24 ASP.NET}}}\cf1\ulnone\f0\fs24\par
+\pard\sl300\slmult0\qj\cf4\b0\f2\par
+\pard\fi-360\sl300\slmult0\qj\cf2\f1 1.\f2\fs14\~\~\~\~\~\~\cf4\f1\fs24 Do not use session variables throughout the code. Use session variables only within the classes and expose methods to access the value stored in the session variables. A class can access the session using\cf2 System.Web.HttpCOntext.Current.Session\cf4\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 2.\f2\fs14\~\~\~\~\~\~\f1\fs24 Do not store large objects in session. Storing large objects in session may consume lot of server memory depending on the number of users.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 3.\f2\fs14\~\~\~\~\~\~\f1\fs24 Always use style sheet to control the look and feel of the pages. Never specify font name and font size in any of the pages. Use appropriate style class. This will help you to change the UI of your application easily in future. Also, if you like to support customizing the UI for each customer, it is just a matter of developing another style sheet for them\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\cf1\b\f0{\field{\*\fldinst{HYPERLINK "http://www.blogger.com/post-edit.do" }}{\fldrslt{\cf3\ul\f1 9.Comments}}}\cf1\ulnone\f0\fs24\par
+\pard\sl300\slmult0\qj\cf4\b0\f2\par
+\f1 Good and meaningful comments make code more maintainable. However,\f2\par
+\par
+\pard\fi-360\sl300\slmult0\qj\f1 1.\f2\fs14\~\~\~\~\~\~\f1\fs24 Do not write comments for every line of code and every variable declared.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 2.\f2\fs14\~\~\~\~\~\~\f1\fs24 Use\~\cf8\b //\cf4\b0\~or\~\cf8\b ///\cf4\b0\~for comments. Avoid using\~\cf6\b /* \'85 */\cf4\b0\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 3.\f2\fs14\~\~\~\~\~\~\f1\fs24 Write comments wherever required. But good readable code will require very less comments. If all variables and method names are meaningful, that would make the code very readable and will not need many comments.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 4.\f2\fs14\~\~\~\~\~\~\f1\fs24 Do not write comments if the code is easily understandable without comment. The drawback of having lot of comments is, if you change the code and forget to change the comment, it will lead to more confusion.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 5.\f2\fs14\~\~\~\~\~\~\f1\fs24 Fewer lines of comments will make the code more elegant. But if the code is not clean/readable and there are less comments, that is worse.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 6.\f2\fs14\~\~\~\~\~\~\f1\fs24 If you have to use some complex or weird logic for any reason, document it very well with sufficient comments.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 7.\f2\fs14\~\~\~\~\~\~\f1\fs24 If you initialize a numeric variable to a special number other than 0, -1 etc, document the reason for choosing that value.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 8.\f2\fs14\~\~\~\~\~\~\f1\fs24 The bottom line is, write clean, readable code such a way that it doesn't need any comments to understand.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 9.\f2\fs14\~\~\~\~\~\~\f1\fs24 Perform spelling check on comments and also make sure proper grammar and punctuation is used.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\cf1\b\f0{\field{\*\fldinst{HYPERLINK "http://www.blogger.com/post-edit.do" }}{\fldrslt{\cf3\ul\f1 10.Exception Handling}}}\cf1\ulnone\f0\fs24\par
+\pard\sl300\slmult0\qj\cf4\b0\f2\par
+\pard\fi-360\sl300\slmult0\qj\f1 1.\f2\fs14\~\~\~\~\~\~\f1\fs24 Never do a 'catch exception and do nothing'. If you hide an exception, you will never know if the exception happened or not. Lot of developers uses this handy method to ignore non significant errors. You should always try to avoid exceptions by checking all the error conditions programmatically. In any case, catching an exception and doing nothing is not allowed. In the worst case, you should log the exception and proceed.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 2.\f2\fs14\~\~\~\~\~\~\f1\fs24 In case of exceptions, give a friendly message to the user, but log the actual error with all possible details about the error, including the time it occurred, method and class name etc.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 3.\f2\fs14\~\~\~\~\~\~\f1\fs24 Always catch only the specific exception, not generic exception.\f2\par
+\pard\sl300\slmult0\qj\par
+\f1 Good:\f2\par
+\par
+\par
+\cf8\f1\~\~\~\~\~\~\~\~\~\~\~ void ReadFromFile ( string fileName )\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ \{\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ try\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ \{\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ // read from file.\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ \}\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ catch (FileIOException ex)\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ \{\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ // log error.\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ //\~ re-throw exception depending on your case.\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ \~\~\~\~\~\~\~\~\~\~\~ throw;\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~ \}\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ \}\f4\fs18\par
+\cf4\f2\fs24\par
+\f1 Not Good:\f2\par
+\par
+\par
+\cf6\f1 void ReadFromFile ( string fileName )\f4\fs18\par
+\f1\fs24\{\f4\fs18\par
+\f1\fs24\~\~ try\f4\fs18\par
+\f1\fs24\~\~ \{\f4\fs18\par
+\f1\fs24\~\~\~\~\~ // read from file.\f4\fs18\par
+\f1\fs24\~\~ \}\f4\fs18\par
+\f1\fs24\~\~ catch (Exception ex)\f4\fs18\par
+\f1\fs24\~\~ \{\f4\fs18\par
+\f1\fs24\~\~\~\~\~ // Catching general exception is bad... we will never know whether\f4\fs18\par
+\f1\fs24\~\~\~\~\~ // it was a file error or some other error.\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\~\f4\fs18\par
+\f1\fs24\~\~\~\~\~ // Here you are hiding an exception.\f4\fs18\par
+\f1\fs24\~\~\~\~\~ // In this case no one will ever know that an exception happened.\f4\fs18\par
+\par
+\f1\fs24\~\~\~\~\~ return "";\~\~\~\~\~\~\~\~\~\~\~\~\~\~\f4\fs18\par
+\f1\fs24\~\~ \}\f4\fs18\par
+\f1\fs24\}\f4\fs18\par
+\cf4\f1\fs24\~\~\~\~\~\~\~\~\~\~\~\f2\par
+\par
+\pard\fi-360\sl300\slmult0\qj\f1 4.\f2\fs14\~\~\~\~\~\~\f1\fs24 No need to catch the general exception in all your methods. Leave it open and let the application crash. This will help you find most of the errors during development cycle. You can have an application level (thread level) error handler where you can handle all general exceptions. In case of an 'unexpected general error', this error handler should catch the exception and should log the error in addition to giving a friendly message to the user before closing the application, or allowing the user to 'ignore and proceed'.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 5.\f2\fs14\~\~\~\~\~\~\f1\fs24 When you re throw an exception, use the\~\cf2 throw\cf4\~statement without specifying the original exception. This way, the original call stack is preserved.\f2\par
+\pard\sl300\slmult0\qj\par
+\f1 Good:\f2\par
+\par
+\cf8\f1 catch\f4\fs18\par
+\f1\fs24\{\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ // do whatever you want to handle the exception\f4\fs18\par
+\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ throw;\~\f4\fs18\par
+\f1\fs24\}\f4\fs18\par
+\cf4\f2\fs24\par
+\pard\fi345\sl300\slmult0\qj\f1 Not Good:\f2\par
+\pard\sl300\slmult0\qj\par
+\cf6\f1 catch (Exception ex)\f4\fs18\par
+\f1\fs24\{\f4\fs18\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ // do whatever you want to handle the exception\f4\fs18\par
+\par
+\f1\fs24\~\~\~\~\~\~\~\~\~\~\~ throw ex;\f4\fs18\par
+\f1\fs24\}\f4\fs18\par
+\cf4\f2\fs24\par
+\pard\fi-360\sl300\slmult0\qj\f1 6.\f2\fs14\~\~\~\~\~\~\f1\fs24 Do not write try-catch in all your methods. Use it only if there is a possibility that a specific exception may occur and it cannot be prevented by any other means. For example, if you want to insert a record if it does not already exists in database, you should try to select record using the key. Some developers try to insert a record without checking if it already exists. If an exception occurs, they will assume that the record already exists. This is strictly not allowed. You should always explicitly check for errors rather than waiting for exceptions to occur. On the other hand, you should always use exception handlers while you communicate with external systems like network, hardware devices etc. Such systems are subject to failure anytime and error checking is not usually reliable. In those cases, you should use exception handlers and try to recover from error.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 7.\f2\fs14\~\~\~\~\~\~\f1\fs24 Do not write very large try-catch blocks. If required, write separate try-catch for each task you perform and enclose only the specific piece of code inside the try-catch. This will help you find which piece of code generated the exception and you can give specific error message to the user.\f2\par
+\pard\sl300\slmult0\qj\par
+\pard\fi-360\sl300\slmult0\qj\f1 8.\f2\fs14\~\~\~\~\~\~\f1\fs24 Write your own custom exception classes if required in your application. Do not derive your custom exceptions from the base class SystemException. Instead, inherit from ApplicationException.\f2\par
+\pard\sa200\sl276\slmult1\cf0\f1\fs22\par
+\par
+\par
+\par
+\par
+{\field{\*\fldinst{HYPERLINK "http://www.codeproject.com/Articles/8971/C-Coding-Standards-and-Best-Programming-Practices"}}{\fldrslt{\ul\cf2 http://www.codeproject.com/Articles/8971/C-Coding-Standards-and-Best-Programming-Practices}}}\f1\fs22\par
+\lang9\f6\par
+}
+ 
